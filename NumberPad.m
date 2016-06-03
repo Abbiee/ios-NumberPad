@@ -10,12 +10,39 @@
 
 @implementation NumberPad
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (id) initWithCoder:(NSCoder *)aDecoder{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self initializeSubviews];
+    }
+    return self;
 }
-*/
+
+- (id) initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    
+    if (self) {
+        [self initializeSubviews];
+    }
+    return self;
+}
+
+-(void) initializeSubviews {
+   NSString *className = NSStringFromClass([self class]);
+   UIView *view = [[[NSBundle mainBundle] loadNibNamed:className owner:self options:nil] firstObject];
+    [self addSubview:view];
+    view.frame = self.bounds;
+}
+
+- (IBAction)keyTapped:(UIButton *)sender {
+    if (self.delegate) {
+        [self.delegate keyWasTapped:sender.titleLabel.text];
+    }
+}
+- (IBAction)backspaceTap:(UIButton *)sender {
+    if (self.delegate) {
+        [self.delegate backspace];
+    }
+}
 
 @end

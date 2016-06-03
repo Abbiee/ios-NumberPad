@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
+                <outlet property="dismissKeyboard" destination="VhC-5Z-LZ4" id="N5j-9P-0DU"/>
+                <outlet property="textField" destination="onV-y0-uYj" id="2G7-F3-2oK"/>
+                <outlet property="textField2" destination="OgI-R3-XnT" id="lrC-Ds-1RQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +17,48 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="onV-y0-uYj">
+                    <rect key="frame" x="26" y="86" width="127" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.79782928909953932" blue="0.58424162247126366" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="cQK-bq-g2L"/>
+                        <constraint firstAttribute="width" constant="127" id="ngr-RC-eUH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OgI-R3-XnT">
+                    <rect key="frame" x="194" y="86" width="122" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.79782928909999995" blue="0.5842416225" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="122" id="CEo-pf-DOV"/>
+                        <constraint firstAttribute="height" constant="30" id="fcc-5z-MAc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhC-5Z-LZ4">
+                    <rect key="frame" x="63" y="171" width="52" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="HdO-SX-k4a"/>
+                        <constraint firstAttribute="width" constant="52" id="iNl-z7-0ju"/>
+                    </constraints>
+                    <state key="normal" title="dismiss"/>
+                    <connections>
+                        <action selector="onDismiss:" destination="-1" eventType="touchUpInside" id="RW1-xb-DzN"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="onV-y0-uYj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="26" id="Dos-ug-9vC"/>
+                <constraint firstItem="OgI-R3-XnT" firstAttribute="leading" secondItem="onV-y0-uYj" secondAttribute="trailing" constant="41" id="gaJ-MH-bsp"/>
+                <constraint firstItem="VhC-5Z-LZ4" firstAttribute="top" secondItem="onV-y0-uYj" secondAttribute="bottom" constant="55" id="hy6-iq-y4a"/>
+                <constraint firstItem="VhC-5Z-LZ4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="63" id="wbH-Bs-oxs"/>
+                <constraint firstItem="onV-y0-uYj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="86" id="wby-cU-3L9"/>
+            </constraints>
+            <point key="canvasLocation" x="473" y="317"/>
         </view>
     </objects>
 </document>

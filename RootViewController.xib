@@ -1,19 +1,56 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9532"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RootViewController">
             <connections>
+                <outlet property="childView" destination="itm-Od-nSu" id="Zin-ED-mco"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="itm-Od-nSu">
+                    <rect key="frame" x="10" y="77" width="355" height="207"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="hKR-Bl-Fs8"/>
+                        <constraint firstAttribute="height" constant="207" id="zqb-dF-88d"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="hKR-Bl-Fs8"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.72998555030000001" green="1" blue="0.46397616110000001" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="itm-Od-nSu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3oH-ZR-SJg"/>
+                <constraint firstAttribute="trailing" secondItem="itm-Od-nSu" secondAttribute="trailing" constant="10" id="5MC-DM-hmQ"/>
+                <constraint firstItem="itm-Od-nSu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="77" id="7WJ-VE-FzW"/>
+                <constraint firstItem="itm-Od-nSu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="G9c-xm-bhK"/>
+                <constraint firstItem="itm-Od-nSu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GNT-Tm-OBI"/>
+                <constraint firstItem="itm-Od-nSu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="GWW-n6-IsO"/>
+                <constraint firstItem="itm-Od-nSu" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="hbY-08-yd9"/>
+                <constraint firstAttribute="trailing" secondItem="itm-Od-nSu" secondAttribute="trailing" id="pQv-qY-zXl"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="G9c-xm-bhK"/>
+                    <exclude reference="GNT-Tm-OBI"/>
+                    <exclude reference="hbY-08-yd9"/>
+                    <exclude reference="pQv-qY-zXl"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="279.5" y="257.5"/>
         </view>
     </objects>
 </document>

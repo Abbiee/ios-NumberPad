@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NumberPad : UIView
 
+@protocol NumberPadDelegate <NSObject>
+-(void) keyWasTapped:(NSString *)character;
+-(void) backspace;
+@end
+
+@interface NumberPad : UIView
+@property(nonatomic, weak) id <NumberPadDelegate> delegate;
 @end
